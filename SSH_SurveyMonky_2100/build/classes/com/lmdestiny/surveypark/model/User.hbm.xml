@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+    <hibernate-mapping>
+    	<class name="com.lmdestiny.surveypark.model.User" table="users">
+    	<id name="id" column="id" type="integer">
+    		<generator class="identity"></generator>
+    	</id>
+    	<property name="email" column="email" type="string" length="50" />
+    	<property name="password" column="password" type="string" length="50" />
+    	<property name="name" column="name" type="string" length="50" />
+    	<property name="nickName" column="nickname" type="string" length="50" />
+    	<property name="regDate" column="regdate" type="timestamp" update="false" />
+    	<set name="roles" table="user_role_link" lazy="false">
+    		<key column="userid"></key>
+    		<many-to-many class="com.lmdestiny.surveypark.model.security.Role" column="roleid"></many-to-many>
+    	</set>
+    	</class> 
+    </hibernate-mapping>

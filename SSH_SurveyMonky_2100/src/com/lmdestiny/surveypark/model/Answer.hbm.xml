@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+	<class name="com.lmdestiny.surveypark.model.Answer" table="answers">
+		<id name="id" column="id" type="integer">
+			<generator class="identity"></generator>
+		</id>
+		<property name="answerIds" column="answerids" type="string" length="200"></property>
+		<property name="otherAnswer" column="otheranswer" type="string" length="200"></property>
+		<property name="uuid" column="uuid" type="string" length="50"></property>
+		<property name="answerTime" column="answertime" type="timestamp" ></property>
+		<property name="questionId" column="questionid" type="integer"></property>
+		<property name="surveyId" column="surveyid" type="integer"></property>
+	</class>
+</hibernate-mapping>
